@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tempo de vida</title>
+        <link rel="shortcut icon" href="skull_icon.png" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Blaka&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section id="section">
+            <h1 id="title">Descubra quantos dias de vida você ainda tem</h1>
+            <form action="">
+                <div id="date">
+                    <input id="my-day" class="input_date" type="text" name="" placeholder="DIA" maxlength="2"/>
+                    <input id="my-month" class="input_date" type="text" name="" placeholder="MÊS" maxlength="2"/>
+                    <input id="my-year" class="input_date" type="text" name="" placeholder="ANO" maxlength="4"/>
+                </div>
+                <div id="radio_bttn">
+                    <input  type="radio" name="choice" value="male"/>
+                    <label class="radio_bttn_label">Masculino</label>
+                    <input  type="radio" name="choice" value="female"/>
+                    <label class="radio_bttn_label">Feminino</label>
+                </div>
+            </form>
+            <button id="button">VERIFIQUE SEUS DIAS<span id="button_img"></span></button>
+            <p id="result"></p>
+        </section>
+        <script src="index.js"></script>
+    </body>
+</html>
