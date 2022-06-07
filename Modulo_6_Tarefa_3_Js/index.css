@@ -87,3 +87,26 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 1px 1px 10px yellow;
 }
+/* MEDIA QUERY */
+@media (max-width: 600px) {
+    #title {
+        font-size: 6vw;
+    }
+    #input1,#input2 {
+        width: 35vw;
+        height: 10vh;
+        font-size: 4vw;
+    }
+    #select {
+        width: 30vw;
+        font-size: 3.2vw;
+    }
+    #button {
+        width: 30vw;
+        font-size: 4vw;
+    }
+    #result {
+        width: 60vw;
+        font-size: 4vw;
+    }
+}
