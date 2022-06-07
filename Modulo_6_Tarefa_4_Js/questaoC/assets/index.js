@@ -10,6 +10,7 @@ button.addEventListener('click', function() {
     console.log(minint,maxint);
     if (isNaN(input)) {
         result.innerHTML = 'ERROOOO!!!!'
+        result2.innerHTML = ' '
     } else {
         result.innerHTML = 'O menor valor inteiro é '+ minint +' .'
         result2.innerHTML = 'O maior valor inteiro é '+ maxint + ' .'
