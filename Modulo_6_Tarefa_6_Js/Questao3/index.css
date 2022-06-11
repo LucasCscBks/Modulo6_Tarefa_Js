@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#section {
+    width: 60%;
+    margin-left: 20vw;
+    height: 83.3vh;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(bg.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#title {
+    font-size: 3vw;
+    color: rgba(0,0,255,1);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+#container {
+    margin-top: 5vh;
+}
+.container {
+    display: flex;
+    width: 20vw;
+    font-size: 2vw;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(0,0,255,1);
+    font-weight: 700;
+}
+#button {
+    margin-top: 2vh;
+    width: 15vw;
+    height: 8vh;
+    color: rgba(0,0,255,1);
+    font-weight: 900;
+}
+#result {
+    margin-top: 5vh;
+    color: rgba(0,0,255,1);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 3vw;
+}

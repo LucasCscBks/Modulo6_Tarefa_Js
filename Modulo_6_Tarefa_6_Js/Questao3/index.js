@@ -27,7 +27,8 @@ function alarm() {
         totalTime -= 1 
         if (totalTime < hurryTime) {
             result.style.color = 'rgba(255,0,0,1)';
-            result.style.fontSize = '100px';
+            result.style.fontWeigth = '900'
+            result.style.fontSize = '8vw';
         }
     } else if (contSec == -1) {
         contSec = 59
@@ -35,6 +36,7 @@ function alarm() {
         if (contMin < 0) {
             clearInterval(interval);
             alarmAudio.play()
+            result.textContent = 'ACORDAAA'
         }
     }
     }
@@ -49,8 +51,8 @@ function alarm() {
         alarmAudio.pause();
         button.textContent = 'ATIVAR ALARME'
         result.textContent = 'Alarme parado!'
-        result.style.fontSize = '20px'
-        result.style.color = 'rgba(0,0,0,1)'
+        result.style.fontSize = '3vw'
+        result.style.color = 'rgba(0,0,255,1)'
         button.addEventListener('click', alarm);
         button2.removeEventListener('click', stopAlarm);
     }
