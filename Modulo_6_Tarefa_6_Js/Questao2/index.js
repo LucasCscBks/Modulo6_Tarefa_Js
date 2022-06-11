@@ -36,8 +36,8 @@ function timeBomb() {
 
 button1.addEventListener('click', function() {
     
-    let myTimeout = setTimeout(bomb, 3000);
-    let remove = setTimeout(rmv, 3000);
+    let myTimeout = setTimeout(bomb, 60000);
+    let remove = setTimeout(rmv, 60000);
     TimeTick = setInterval(timeBomb, 1000);
 
     function rmv() {
