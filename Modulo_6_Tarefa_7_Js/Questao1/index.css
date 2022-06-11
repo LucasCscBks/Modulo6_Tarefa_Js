@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#header {
+    width: 70%;
+    height: 27vh;
+    margin-left: 15vw;
+    margin-top: 5vh;
+    font-size: 2.1vw;
+    font-weight: 900;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+#header_p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    /* background-color: blue; */
+}
+#select {
+    width: 12vw;
+    height: 3vw;
+    font-size: 1.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+#main {
+    width: 70%;
+    height: 56vh;
+    margin-left: 15vw;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+}
+#main_section_left {
+    width: 55%;
+    height: 56vh;
+}
+#img {
+    margin-top: 2vh;
+    width: 100%;
+    height: 35vh;
+}
+#main_container {
+    width: 100%;
+    height: 14.2vh;
+    display: flex;
+}
+#section_left_p1 {
+    width: 50%;
+    height: 14.2vh;
+    /* background-color: tomato; */
+    display: flex;
+    font-size: 1.5vw;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#section_left_p2 {
+    width: 50%;
+    height: 14.2vh;
+    /* background-color:chartreuse; */
+    display: flex;
+    font-size: 1.5vw;
+    align-items: center;
+    flex-direction: column;
+}
+span {
+    font-size: 3vw;
+}
+#main_section_right {
+    width: 45%;
+    height: 56vh;
+    /* background-color: brown; */
+    display: block;
+}
+.right_p {
+    width: 100%;
+    font-size: 2.5vw;
+    padding-left: 0.5vw;
+}
+#section_right_p1 {
+    height: 12vh;
+    /* background-color: green; */
+}
+#section_right_p2 {
+    /* background-color: aqua; */
+    height: 18vh;
+}
+#section_right_p3 {
+    /* background-color: white; */
+    height: 14vh;
+}
+#section_right_p4 {
+    /* background-color: yellowgreen; */
+    height: 12vh;
+}
+#brand {
+    width: 100%;
+    /* background-color: blueviolet; */
+    height: 8vh;
+    font-size: 1.8vw;
+}
+#fuel_text {
+    width: 100%;
+    font-size: 1.5vw;
+    
+    /* background-color: yellowgreen; */
+}
+#speed {
+    width: 100%;
+    font-size: 1.5vw;
+    /* background-color: blue; */
+}
+#manual {
+    width: 100%;
+    font-size: 1.5vw;
+    /* background-color: aqua; */
+}
