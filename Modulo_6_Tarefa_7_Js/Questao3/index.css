@@ -1,0 +1,12 @@
+#section {
+    width: 600px;
+    height: 500px;
+}
+#container {
+    margin-top: 5vh;
+}
+#textArea {
+    resize: none;
+    width: 800px;
+    font-size: 30px;
+}
