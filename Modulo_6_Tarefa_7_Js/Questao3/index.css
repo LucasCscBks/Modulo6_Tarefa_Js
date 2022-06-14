@@ -75,7 +75,7 @@ button:active {
 
 @media (max-width: 600px) {
     #section {
-        height: 620px;
+        height: 500px;
         justify-content: unset;
         align-items: center;
     }
@@ -106,5 +106,6 @@ button:active {
     }
     #textArea {
         width: 300px;
+        font-size: 18px;
     }
 }
