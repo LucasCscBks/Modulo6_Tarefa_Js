@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando Objeto parte 2</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <section id="section">
+        <form id="form">
+            <div>
+                <label>Nome </label>
+                <input id="name" type="text" placeholder="xxxx"/>
+            </div>
+            <div>
+                <label>Dia </label>
+                <input id="day" type="text" placeholder="1-31" maxlength="2"/>
+                <label>Mês </label>
+                <input id="month" type="text" placeholder="1-12" maxlength="2"/>
+                <label>Ano </label>
+                <input id="year" type="text" placeholder="0000" maxlength="4"/>
+            </div>
+            <div>
+                <label>Peso </label>
+                <input id="weight" type="text" placeholder="kg"/>
+                <label>Altura </label>
+                <input id="height" type="text" placeholder="cm"/>
+            </div>
+            <div>
+                <label>Gênero</label>
+                <select id="select_gender">
+                    <option name="" value="">Escolha</option>
+                    <option name="gender" value="male">Masculino</option>
+                    <option name="gender" value="female">Feminino</option>
+                </select>
+            </div>
+        </form>
+        <button id="button">Armazenar</button>
+        <p id="msg_error"></p>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
