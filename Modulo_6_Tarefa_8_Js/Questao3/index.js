@@ -46,7 +46,20 @@ function objectUser() {
         if (name == '') throw 'Field “name” is invalid!' 
         if (String(name).length < 5) throw 'Field “name” is invalid!'
 
-        if (d > 31 || m > 12) throw 'Field “birthDate” is invalid!';
+        if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12 ) {
+            if (d > 31) throw 'Field “birthDate” is invalid!';
+        }
+        if (m == 4 || m == 6 || m == 9 || m == 11) {
+            if (d > 30) throw 'Field “birthDate” is invalid!';
+        }
+        if (m == 2) {
+            if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+                if (d > 29) throw 'Field “birthDate” is invalid!';
+            } else {
+                if (d > 28) throw 'Field “birthDate” is invalid!';
+            }
+        }
+        if (m > 12) throw 'Field “birthDate” is invalid!';
         if (myTotal > total) throw 'Field “birthDate” is invalid!';
 
         if (isNaN(weightObj.value)) throw 'Field “weight” is invalid!'
@@ -58,7 +71,7 @@ function objectUser() {
         // RESULT XXXXXXXXXXXXXXXXXXXX
         let height = parseInt(heightObj.value)
         user.name = name
-        user.birthDate = d + '/' + m + '/' + y
+        user.birthDate = new Date(y, m -1, d)
         user.weight = weight
         user.height = height 
         user.gender = gender
@@ -66,7 +79,7 @@ function objectUser() {
 
         msgObj.style.fontSize = '25px'
         msgObj.textContent = 'Name: ' + user.name
-        r2.textContent = 'BirthDate: ' + user.birthDate
+        r2.textContent = 'BirthDate: ' + user.birthDate.toDateString()
         r3.textContent = 'Weight: ' + user.weight + 'kg'
         r4.textContent = 'Height: ' + user.height + 'cm'
         r5.textContent = 'Gender: ' + user.gender
