@@ -14,7 +14,6 @@ let heightObj = document.querySelector('#height');
 let selectObj = document.querySelector('#select_gender')
 let buttonObj = document.querySelector('#button');
 let msgObj = document.querySelector('#msg_error');
-let r1 = document.querySelector('#r1');
 let r2 = document.querySelector('#r2');
 let r3 = document.querySelector('#r3');
 let r4 = document.querySelector('#r4');
@@ -65,7 +64,8 @@ function objectUser() {
         user.gender = gender
         userJson = JSON.stringify(user);
 
-        r1.textContent = 'Name: ' + user.name
+        msgObj.style.fontSize = '25px'
+        msgObj.textContent = 'Name: ' + user.name
         r2.textContent = 'BirthDate: ' + user.birthDate
         r3.textContent = 'Weight: ' + user.weight + 'kg'
         r4.textContent = 'Height: ' + user.height + 'cm'
@@ -74,7 +74,12 @@ function objectUser() {
         // XXXXXXXXXXXXXXXXXXXXXXXXXXXX
     } catch(err) {
         console.log(err);
+        msgObj.style.fontSize = '50px'
         msgObj.textContent = err
+        r2.textContent = ''
+        r3.textContent = ''
+        r4.textContent = ''
+        r5.textContent = ''
     }
     
 }
