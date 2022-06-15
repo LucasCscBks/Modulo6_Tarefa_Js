@@ -57,6 +57,7 @@ function objectUser() {
         if (isNaN(weightObj.value)) throw 'Field “weight” is invalid!'
     } catch(err) {
         console.log(err);
+        msgObj.textContent = err
     }
     user.weigth = weight
     
@@ -66,6 +67,7 @@ function objectUser() {
         if (Number.isInteger(heightValue) == false ) throw 'Field “height” is invalid!';
     } catch(err) {
         console.log(err)
+        msgObj.textContent = err
     }
     let height = parseInt(heightObj.value)
     user.heigth = height 
@@ -75,6 +77,7 @@ function objectUser() {
         if (gender != 'male' && gender != 'female') throw 'Field “gender” is invalid!';
     } catch(err) {
         console.log(err)
+        msgObj.textContent = err
     }
     
     user.gender = gender
