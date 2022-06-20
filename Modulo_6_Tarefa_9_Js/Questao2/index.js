@@ -19,29 +19,47 @@ function sum(num1,num2) {
 // 6 - 4 = x
 // x + 4 = 6
 // a = c + b
-let count = 0
-num3 = 133
+let button = document.querySelector('#button')
+let answer = document.querySelector('#result');
+let obj1 = document.querySelector('#n1')
+let obj2 = document.querySelector('#n2')
+
+button.addEventListener('click' , sub)
+
 function sub(num1,num2) {
-    try {
-        if (num1 < num2) throw `[sub] Impossible to subtract ${num1} - ${num2}`
-        if (num1 === num2) {
-            console.log(`A conta ${num1} - ${num3} = ${0}`)
-        } else {
-            let x = 1
-            count = sum(count,1)
-            let calc2 = sum(num2,x)
-            if (num1 > calc2) {
-                sub(num1,calc2)
+    let n1 = parseFloat(obj1.value)
+    let n2 = parseFloat(obj2.value)
+    num1 = n1
+    num2 = n2
+    let count = 0
+
+    subtract(num1,num2)
+
+    function subtract(num1,num2) {
+        
+        
+        try {
+            if (num1 < num2) throw `[sub] Impossible to subtract ${num1} - ${num2}`
+            if (num1 === num2) {
+                console.log(`A conta ${num1} - ${n2} = ${0}`)
+            } else {
+                let x = 1
+                count = sum(count,1)
+                let calc2 = sum(num2,x)
+                if (num1 > calc2) {
+                    subtract(num1,calc2)
+                }
+                if (num1 == calc2) {
+                    console.log(`${num1} - ${n2} = ${count}`)
+                    console.log(`Subtract RESULT = ${count}`)
+                    answer.textContent = `${num1} - ${n2} = ${count}`
+                }
             }
-            if (num1 == calc2) {
-                console.log(`${num1} - ${num3} = ${count}`)
-                console.log(`Subtract RESULT = ${count}`)
-            }
+        } catch(err) {
+            console.log(err)
         }
-    } catch(err) {
-        console.log(err)
+        return count
     }
-    return count
 }
-sub(400,num3)
+// sub(400,num3)
 

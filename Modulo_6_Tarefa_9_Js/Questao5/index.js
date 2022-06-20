@@ -41,6 +41,7 @@ function sub(num1,num2) {
     } catch(err) {
         console.log(err)
     }
+    return count
 }
 // sub(10,num3)
 // sub(5515,4000);
@@ -62,10 +63,11 @@ function mult(num1,num2) {
             }
             mult(num1,num2) 
         }
-        return result;
+       
     } catch(err) {
         console.log(err)
     }
+    return result;
 }
 // mult(40,30)
 
@@ -93,9 +95,9 @@ function expo(num1,num2) {
         if (n > 1 && n < num3) {
             n = sum(n,1)
             exp = exp * num3
-            console.log(`RESULT ${exp}`)
+            // console.log(`RESULT ${exp}`)
             if (n == num3) {
-                console.log(`RESULT ${exp}`)
+                // console.log(`RESULT ${exp}`)
             }
             expo(exp,num2)
         }
@@ -104,6 +106,47 @@ function expo(num1,num2) {
     }
 
 }
-expo(num3,3)
+// expo(num3,3)
 
-// Questão 5 --
+// Questão 5 -- Divisão
+let button = document.querySelector('#button')
+let answer = document.querySelector('#result');
+let obj1 = document.querySelector('#n1')
+let obj2 = document.querySelector('#n2')
+
+button.addEventListener('click', divide);
+
+function divide(num1,num2) {
+    let n1 = parseFloat(obj1.value)
+    let n2 = parseFloat(obj2.value)
+    num1 = n1
+    num2 = n2
+    let t = 0
+    try {
+        if (Number.isInteger(num1) == false || (Number.isInteger(num2) == false)) throw `[divide] Impossible to divide ${num1} / ${num2}`
+        if (num1 < 0 || num2 < 0) throw `[divide] Impossible to divide ${num1} / ${num2}`
+        if (num1 < num2) throw `[divide] Impossible to divide ${num1} / ${num2}`
+        if (num2 == 0) throw `[divide] Division by zero.`
+    } catch(err) {
+        console.log(err)
+    }
+    
+    divides(num1,num2)
+
+    function divides(num1,num2) {
+        if (num1 < num2) {
+            console.log(t)
+            answer.textContent = `${n1} / ${num2} = ${t}`
+            return t
+        }
+        if (num1 >= num2) {
+            num1 = num1 - num2
+            t = sum(t,1)
+            // console.log(num1)
+            
+        }
+        divides(num1,num2)
+    }
+}
+
+// divide(115,3)

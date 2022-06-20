@@ -74,14 +74,33 @@ function mult(num1,num2) {
 let n = 1
 let exp = 0
 let num3 = 6
+
+
+
+let button = document.querySelector('#button')
+let answer = document.querySelector('#result');
+let obj1 = document.querySelector('#n1')
+let obj2 = document.querySelector('#n2')
+
+button.addEventListener('click', expo)
+
 function expo(num1,num2) {
+    let n1 = parseFloat(obj1.value)
+    let n2 = parseFloat(obj2.value)
+    num1 = n1
+    num2 = n2
+
+    exponen(num1,num2)    
+function exponen(num1,num2) {
+
     try {
         if (Number.isInteger(num1) == false || (Number.isInteger(num2) == false)) throw `[multiply] Impossible to multiply ${num1} * ${num2}`
         if (num1 < 0 || num2 < 0) throw `[multiply] Impossible to multiply ${num1} * ${num2}`
         if (num1 < num2) throw `[multiply] Impossible to multiply ${num1} * ${num2}`
         if (num2 == 1) {
-            console.log(`RESULT ${exp = num3}`)
-            console.log(`${num3} elevado a ${num2} = ${exp}`)
+            console.log(`RESULT ${exp = n1}`)
+            console.log(`${n1} elevado a ${num2} = ${exp}`)
+            answer.textContent = `${n1} elevado a ${num2} = ${exp}`
             return exp
         }
         if (n == 1) {
@@ -89,25 +108,28 @@ function expo(num1,num2) {
             exp = mult(num1, num1)
             if (n == num2) {
                 console.log(`RESULT ${exp}`)
-                console.log(`${num3} elevado a ${num2} = ${exp}`)
+                console.log(`${n1} elevado a ${num2} = ${exp}`)
+                answer.textContent = `${n1} elevado a ${num2} = ${exp}`
             }
-        expo(exp,num2)
+        exponen(exp,num2)
         }
         if (n > 1 && n < num2) {
             n = sum(n,1)
-            exp = exp * num3
+            exp = exp * n1
             // console.log(`RESULT ${exp}`)
             if (n == num2) {
                 console.log(`RESULT ${exp}`)
-                console.log(`${num3} elevado a ${num2} = ${exp}`)
+                console.log(`${n1} elevado a ${num2} = ${exp}`)
+                answer.textContent = `${n1} elevado a ${num2} = ${exp}`
             }
-            expo(exp,num2)
+            exponen(exp,num2)
         }
     } catch(err) {
         console.log(err)
     }
     return exp
+    }
 }
-expo(num3,4)
+// expo(num3,4)
 
 // Questão 5 --

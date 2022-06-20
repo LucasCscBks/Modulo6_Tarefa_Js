@@ -47,9 +47,26 @@ function sub(num1,num2) {
 // sub(5515,4000);
 
 // Questão 3 -- Multiplicação
+let button = document.querySelector('#button')
+let answer = document.querySelector('#result');
+let obj1 = document.querySelector('#n1')
+let obj2 = document.querySelector('#n2')
+
+button.addEventListener('click' , mult)
+    
+
 let c = 0
 let result = 0
 function mult(num1,num2) {
+    let n1 = parseFloat(obj1.value)
+    let n2 = parseFloat(obj2.value)
+    num1 = n1
+    num2 = n2
+
+    multiply(num1,num2)
+
+    function multiply(num1,num2) {
+
     try {
         if (Number.isInteger(num1) == false || (Number.isInteger(num2) == false)) throw `[multiply] Impossible to multiply ${num1} * ${num2}`
         if (num1 < 0 || num2 < 0) throw `[multiply] Impossible to multiply ${num1} * ${num2}`
@@ -60,8 +77,9 @@ function mult(num1,num2) {
             if (c == num2) {
                 console.log(`RESULT = ${result}`)
                 console.log(`${num1} * ${num2} = ${result}`)
+                answer.textContent = `${num1} * ${num2} = ${result}`
             }
-            mult(num1,num2) 
+            multiply(num1,num2) 
         }
        
     } catch(err) {
@@ -69,4 +87,5 @@ function mult(num1,num2) {
     }
     return result;
 }
-mult(23,5)
+}
+// mult(23,5)
