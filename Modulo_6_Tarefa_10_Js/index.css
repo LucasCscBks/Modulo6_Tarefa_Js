@@ -1,10 +1,94 @@
-#table {
-    border: 1px solid;
+#section {
+    width: 80%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10vw;
+    background-image: linear-gradient(to right, rgba(128, 0, 128,0.1), rgba(128,0,128,1));
+    box-shadow: 0px 0px 5px 5px;
+}
+#title {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 2vw;
+}
+label {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 1.8vw;
+}
+#product {
+    margin-left: 5.4vw;
+    font-size: 1.2vw;
+    box-shadow: 0px 0px 5px 5px;
+}
+#product_description {
+    font-size: 1.2vw;
+    box-shadow: 0px 0px 5px 5px;
+}
+#product_value {
+    margin-left: 4.3vw;
+    font-size: 1.2vw;
+    box-shadow: 0px 0px 5px 5px;
+}
+#button1 {
+    font-size: 1.6vw;
+    margin-top: 3vh;
+    border-radius: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: rgba(0,0,255,1);
+    border: 1px solid rgba(0,0,255,1);
+    box-shadow: 0px 0px 5px 5px;
+}
+#button2 {
+    font-size: 1.6vw;
+    margin-top: 3vh;
+    border-radius: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: rgba(0,255,0,1);
+    border: 1px solid rgba(0,255,0,1);
+    box-shadow: 0px 0px 5px 5px;
+}
+#result {
+    font-size: 1.4vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    text-shadow: 5px 5px 5px;
 }
 #table_container {
     display: flex;
 }
+#table {
+    border: 2px solid;
+    background-color: rgba(0,255,0,1);
+    box-shadow: 0px 0px 8px 8px #000;
+    font-size: 1.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+th {
+    border: 2px solid;
+}
+td {
+    border: 2px solid #000;
+    color: rgba(0,0,255,1);
+}
 #del_value {
+    margin-left: 4vw;
     width: 150px;
     height: 30px;
+    border-radius: 10px;
+    font-size: 1.3vw;
+}
+input {
+    font-size: 1.2vw;
+    border-radius: 10px;
+}
+button {
+    border-radius: 50px;
+    box-shadow: 0px 0px 3px 3px;
+    font-weight: 700;
 }

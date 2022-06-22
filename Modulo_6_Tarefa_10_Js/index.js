@@ -3,7 +3,7 @@ let productDescriptionObj = document.querySelector('#product_description');
 let productValueObj = document.querySelector('#product_value');
 
 let delLineObj = document.querySelector('#del_value')
-        
+delLineObj.style.display = 'none'        
 
 let button1Obj = document.querySelector('#button1');
 let button2Obj = document.querySelector('#button2');
@@ -46,10 +46,6 @@ function validation() {
     let completeDate = `${day}/${month}/${year} - ${hour}:${minutes}:${seconds}`
 //    DEFININDO A DATA DE CADASTRO DOS PRODUTOS  //    
 
-//  ATRIBUINDO OS VALORES DOS OBJETOS   //
-    
-//  ATRIBUINDO OS VALORES DOS OBJETOS   //
-
 // TESTANDO SE FOI DIGITADO CORRETAMENTE OS VALORES //
     try {
         if (product == '') throw `Falha no cadastro do produto! Nome do produto vazio!`
@@ -57,36 +53,24 @@ function validation() {
         if (productValue == '') throw `Falha no cadastro do produto! Valor Nulo!`
         if (isNaN(productValue)) throw `Falha no cadastro do produto! Valor inválido!`
 
+        //  ATRIBUINDO OS VALORES DOS OBJETOS   //
         produto["id"] = id
         produto["nome"] = product
         produto["descrição"] = productDescription
         produto["valor"] = productValue
         produto["incluídoEm"] = timeStamp
-
+        //  ATRIBUINDO OS VALORES DOS OBJETOS   //
         id += 1
         addList();
 
     } catch(err){
         result.textContent = err
     }
-
 // TESTANDO SE FOI DIGITADO CORRETAMENTE OS VALORES //    
 
-
-    // console.log(product, typeof(product))
-    // console.log(productDescription, typeof(productDescription))
-    // console.log(productValue, typeof(productValue))
-
-    // console.log(produtos)
-    console.log(produto)
-    // console.log(id)
-    // console.log(completeDate)
-    // console.log(timeStamp)
-    
 //   FUNÇÃO DE ADICIONAR O OBJETO AO ARRAY //
     function addList() {
         produtos.push(produto)
-        // console.log(produtos.length)
         console.log(produtos)
         result.textContent = `Produto ${produto.nome} incluído com sucesso`
     }
@@ -141,27 +125,24 @@ button2Obj.addEventListener('click', showProduct);
             imgDelete.style.cursor = 'pointer'
             imgDelete.addEventListener('click', del);
 
+            delLineObj.style.display = 'block'
             function del() {
                 let delLine = delLineObj.value
                 tbody.deleteRow(delLine - 1)
-                console.log(delLine)
               }
             
             td_id.innerText = ` id ${produtos[i].id}`  
-            td_produto.innerText = `nome: ${produtos[i].nome}`
+            td_produto.innerText = ` ${produtos[i].nome}`
             td_produto.style.cursor = 'pointer'
             
             let p = document.createElement('p');
             
             // VALORES MOSTRADOS QUANDO CLICAR NO NOME DO PRODUTO //
-
             p.textContent += `id: ${produtos[i].id}
-            nome: ${produtos[i].nome} 
+            nome: ${produtos[i].nome}
             descrição: ${produtos[i].descrição} 
-            valor: ${produtos[i].valor} 
-            incluídoEm: ${new Date(produtos[i].incluídoEm).getDate()}/${new Date(produtos[i].incluídoEm).getMonth() + 1}/
-            ${new Date(produtos[i].incluídoEm).getFullYear()} - ${new Date(produtos[i].incluídoEm).getHours()}:
-            ${new Date(produtos[i].incluídoEm).getMinutes()}:${new Date(produtos[i].incluídoEm).getSeconds()}`
+            valor: R$ ${produtos[i].valor} 
+            incluídoEm: ${new Date(produtos[i].incluídoEm).getDate()}/${new Date(produtos[i].incluídoEm).getMonth() + 1}/${new Date(produtos[i].incluídoEm).getFullYear()} - ${new Date(produtos[i].incluídoEm).getHours()}:${new Date(produtos[i].incluídoEm).getMinutes()}:${new Date(produtos[i].incluídoEm).getSeconds()}`
             
             result.appendChild(p)
             p.style.display = 'none';
@@ -173,7 +154,7 @@ button2Obj.addEventListener('click', showProduct);
 
             
 
-            td_valor.innerText = `${produtos[i].valor}`
+            td_valor.innerText = `R$ ${produtos[i].valor}`
             td_editar.appendChild(imgEdit);
             td_apagar.appendChild(imgDelete);
             i ++
