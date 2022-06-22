@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <section id="section">
+        <h1 id="title">Cadastro de produtos</h1>
+        <form id="form">
+            <div class="form_container">
+                <label>Nome do produto: </label>
+                <input id="product" type="text" placeholder="produto"/>
+            </div class="form_container">
+            <div>
+                <label>Descrição do produto: </label>
+                <input id="product_description" type="text" placeholder="descrição"/>
+            </div>
+            <div class="form_container">
+                <label>Valor do produto: </label>
+                <input id="product_value" type="text" placeholder="valor"/>
+            </div>
+        </form>
+        <button id="button1" type="button">Incluir produto</button>
+        <button id="button2" type="button">Listar produtos</button>
+        <p id="result"></p>
+        <div id="table_container">
+            <table id="table">
+                <thead id="tr1">
+                    <th></th>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                    <th>Editar</th>
+                    <th>Apagar</th>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+            <input id="del_value" type="text" placeholder="deletar qual linha">
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
