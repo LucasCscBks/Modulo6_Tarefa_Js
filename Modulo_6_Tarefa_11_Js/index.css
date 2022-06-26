@@ -1,0 +1,17 @@
+table,tr,td {
+    border: 1px solid;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.bold {
+  font-weight: 700;
+}
+#fake_table {
+  display: none;
+}
+#search_container {
+  display: none;
+}

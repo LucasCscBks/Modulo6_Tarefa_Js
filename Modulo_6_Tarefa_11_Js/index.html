@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos de uma loja</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <section id="section">
+        <h1 id="title"></h1>
+        <p id="message"></p>
+        <form id="form">
+            <div>
+                <label>Produto: </label>
+                <input id="product" type="text" />
+            </div>
+            <div>
+                <label>Descrição: </label>
+                <input id="description" type="text" />
+            </div>
+            <div>
+                <label>Valor: </label>
+                <input id="value" type="number" />
+            </div>
+            <div id="search_container">
+                <label>Pesquisar produto: </label>
+                <input id="search" type="text" />
+                <button id="searchButton" type="button">Pesquisar</button>
+            </div>
+        </form>
+        <button id="add_products">Incluir produto</button>
+        <button id="show_products">Listar produtos</button>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th id="sortName">Produto</th>
+                    <th id="sortValue">Valor</th>
+                    <th>Editar</th>
+                    <th>Apagar</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </section>
+    <table id="fake_table">
+        <tbody id="container_count"></tbody>
+    </table>
+    <script src="index.js"></script>
+</body>
+</html>
