@@ -257,9 +257,11 @@ function mainValidation() {
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                 
                 for (i = 0; i < filterArr.length; i++) {
-                    
-                    tbody.insertRow()
-        
+                    container.insertRow()
+                    let containerId = document.createElement('td');
+                    containerId.textContent = myOrder[i].id
+                    container.appendChild(containerId);                    
+                    tbody.insertRow()        
                     let tId = document.createElement('td');
                     let tName = document.createElement('td');
                     let tValue = document.createElement('td');
@@ -268,14 +270,12 @@ function mainValidation() {
                     imgEdit.src = 'edit.svg'
                     let tDelete = document.createElement('td');
                     let imgDel = document.createElement('img');
-                    imgDel.src = 'delete.svg'
-        
+                    imgDel.src = 'delete.svg'        
                     tId.textContent = filterArr[i].id
                     tName.textContent = filterArr[i].nome
                     tValue.textContent = parseFloat(filterArr[i].valor).toFixed(2)
                     let description = filterArr[i].descriçao
-                    let timeCreated = `${new Date(filterArr[i].incluidoEm).getDate()}/${new Date(filterArr[i].incluidoEm).getMonth() + 1}/${new Date(filterArr[i].incluidoEm).getFullYear()} - ${new Date(filterArr[i].incluidoEm).getHours()}:${new Date(filterArr[i].incluidoEm).getMinutes()}:${new Date(filterArr[i].incluidoEm).getSeconds()}`
-        
+                    let timeCreated = `${new Date(filterArr[i].incluidoEm).getDate()}/${new Date(filterArr[i].incluidoEm).getMonth() + 1}/${new Date(filterArr[i].incluidoEm).getFullYear()} - ${new Date(filterArr[i].incluidoEm).getHours()}:${new Date(filterArr[i].incluidoEm).getMinutes()}:${new Date(filterArr[i].incluidoEm).getSeconds()}`        
                     tbody.appendChild(tId);
                     tbody.appendChild(tName);
                     tbody.appendChild(tValue);
@@ -283,7 +283,70 @@ function mainValidation() {
                     tbody.appendChild(tEdit);
                     tDelete.appendChild(imgDel);
                     tbody.appendChild(tDelete);
+// XXXXXXXXXXXXXXXXX COPIANDO SÓ ATÉ AQUI FUNCIONA TRANQUILO SÓ TEM QUE VOLTAR PARA O LISTAR PRODUTOS PARA CONSEGUIR ACESSAR AS XXXXXXXXXXXXXX
+// XXXXXXXXXXXXXXXXX           FUNCIONALIDADES ANTERIORES         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX                     
+                    tName.style.cursor = 'pointer'
+                    tName.addEventListener('click', function () {
+                        msg.innerText = `id: ${tId.textContent} Nome: ${tName.textContent}  Descrição: ${description} Valor: R$${parseFloat(tValue.textContent).toFixed(2)} Incluído em: ${timeCreated}`
+                    })
+                    imgEdit.style.cursor = 'pointer'
+                    imgEdit.addEventListener('click', function editEvent() {
+                    msg.innerText = `Edite seu produto!`
+                    buttonShow.removeEventListener('click', showProducts)
+                    buttonShow.innerText = `Atualizar`
+                    buttonShow.addEventListener('click', function edit() {
+                        try {
+                            if (productNameObj.value == '') throw `Falha no cadastro do produto! Campo nome vazio!!`
+                            if (productDescriptionObj.value == '') throw `Falha no cadastro do produto! Campo descrição vazio!!`
+                            if (productValueObj.value == '') throw `Falha no cadastro do produto! Campo valor vazio!!`
+                            if (productValueObj.value < 0 ) throw `Falha no cadastro do produto! Digite um valor positivo!!`                   
+                            buttonShow.innerText = 'Listar produtos'
+                            msg.innerText = `Atualizado com sucesso`
+                            products[containerId.textContent - 1].nome = productNameObj.value
+                            products[containerId.textContent - 1].descriçao = productDescriptionObj.value
+                            products[containerId.textContent - 1].valor = productValueObj.value                            
+                            productNameObj.value = ''
+                            productDescriptionObj.value = ''
+                            productValueObj.value = ''
+                            buttonShow.removeEventListener('click', edit)
+                            showProducts() 
+                        } catch(err) {
+                            msg.innerText = err
+                        }
+                    })    
+            })
+            imgDel.style.cursor = 'pointer'
+            imgDel.addEventListener('click', function del() {           
+                for (let n = 0; n <= products.length; n++){                    
+                    if (n == containerId.textContent ) {                       
+                        products.splice(n -1,1)
+                        myOrder.splice(n -1,1)
+                        updateId()
+                        function updateId() {
+                            for (let count = 0; count < products.length; count ++) {
+                                myOrder[count].id = count + 1
+                            }
+                            showProducts()
+                        }                        
+                    }
                 }
+            })
+            }
+            sortProduct.addEventListener('click', function sortName() {
+                products.sort(function(a, b) {
+                    let x = a.nome.toLowerCase();
+                    let y = b.nome.toLowerCase();
+                    if (x < y) {return -1}
+                    if (x > y) {return 1}
+                    return 0
+                });
+                showProducts()    
+            })
+            sortValue.addEventListener('click', function sortProductValue() {
+
+                products.sort(function(a, b) { return a.valor - b.valor})
+                showProducts()
+            });  
                 // console.log(filterArr);
             })
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXX FIMMMMMMMMM XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
