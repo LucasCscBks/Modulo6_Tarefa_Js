@@ -9,7 +9,7 @@
 </head>
 <body>
     <section id="section">
-        <h1 id="title"></h1>
+        <h1 id="title">Cadastro de produtos!</h1>
         <p id="message"></p>
         <form id="form">
             <div>
@@ -24,18 +24,20 @@
                 <label>Valor: </label>
                 <input id="value" type="number" />
             </div>
-            <div id="search_container">
-                <label>Pesquisar produto: </label>
-                <input id="search" type="text" />
-                <button id="searchButton" type="button">Pesquisar</button>
+            <div id="button_container">
+                <button id="add_products" type="button">Incluir produto</button>
+                <button id="show_products" type="button">Listar produtos</button>
             </div>
         </form>
-        <button id="add_products">Incluir produto</button>
-        <button id="show_products">Listar produtos</button>
+        <div id="search_container">
+            <label>Pesquisar produto: </label>
+            <input id="search" type="text" />
+            <button id="searchButton" type="button">Pesquisar</button>
+        </div>
         <table id="table">
             <thead>
                 <tr>
-                    <th></th>
+                    <th id="sortId"></th>
                     <th id="sortName">Produto</th>
                     <th id="sortValue">Valor</th>
                     <th>Editar</th>

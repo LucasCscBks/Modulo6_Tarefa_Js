@@ -1,17 +1,111 @@
-table,tr,td {
-    border: 1px solid;
+#section {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20vw;
+  box-shadow: 0px 0px 5px 5px rgba(0,0,255,1);
+  background-image: linear-gradient(rgba(204, 0, 255,0.1), rgba(204, 0, 255, 0.5));
+}
+#title {
+  font-family: 'Courier New', Courier, monospace;
+  align-self: center;
+  text-transform: uppercase;
+  color: rgba(0,0,155,1);
+  font-size: 2.2vw;
+}
+#message {
+  align-self: center;
+  width: 95%;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 1.5vw;
+  color: rgba(0,0,255,1);
+}
+#form {
+  font-size: 1.5vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  margin-left: 1vw;
+}
+label {
+  color: rgba(0,0,155,1);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.bold {
+input {
+  font-size: 1.3vw;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: 700;
+  border-radius: 10px;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+#product {
+  margin-left: 1.8vw;
+}
+#value {
+  margin-left: 3.6vw;
+}
+button {
+  width: 25vw;
+  height: 5vh;
+  border-radius: 50px;
+  font-size: 1.6vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  opacity: 0.7;
+}
+#add_products {
+  background-color: rgba(0,0,255,0.4);
+}
+#show_products {
+  background-color: rgba(0,255,0,0.4);
+}
+#button_container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1vh;
+  margin-bottom: 1.5vh;
 }
 #fake_table {
   display: none;
 }
 #search_container {
-  display: none;
+  /* display: none; */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.3vw;
+  font-weight: 700;
+  margin-left: 1vw;
+  margin-bottom: 1vh;
+}
+#searchButton {
+  background-color: rgba(255,0,0,0.4);
+  text-transform: uppercase;
+}
+table,th,tr,td {
+  border: 2px solid;
+  border-collapse: collapse;
+}
+th {
+  font-size: 2vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  border-color: #000;
+  background-color: #fff;
+}
+td {
+  background-color: rgba(0,255,0,0.4);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  font-size: 1.5vw;
+  text-align: center;
 }

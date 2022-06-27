@@ -13,6 +13,7 @@ let buttonAdd = document.querySelector('#add_products');
 let buttonShow = document.querySelector('#show_products');
 let tbody = document.querySelector('#tbody');
 let msg = document.querySelector('#message');
+let sortId = document.querySelector('#sortId');
 let sortProduct = document.querySelector('#sortName');
 let sortValue = document.querySelector('#sortValue');
 let searchContainerObj = document.querySelector('#search_container');
