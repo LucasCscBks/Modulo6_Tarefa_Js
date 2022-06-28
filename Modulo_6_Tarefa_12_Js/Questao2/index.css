@@ -1,0 +1,28 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+#show {
+    width: 18vw;
+    height: 12vh;
+    font-size: 2.5vw;
+    border-radius: 50px;
+}
+#result {
+    width: 100%;
+    color: rgba(0,0,255,1);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#num {
+    height: 8vh;
+    width: 10vw;
+    font-size: 1.5vw;
+}
+label {
+    font-size: 2.5vw;
+}
