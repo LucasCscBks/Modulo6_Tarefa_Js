@@ -46,11 +46,11 @@ function euler(n) {
     console.log(str)
     console.log(typeof str)
     console.log(`2${rep}`)
-    result2.innerText = `2${rep}`
+    result2.innerText = `Número de Euler: 2${rep}`
     return a
 }
-dec = 10n
-n = 10
+dec = 100n
+n = 300
 euler(n)
-numObj.addEventListener('keyup' , fatorial);
+// numObj.addEventListener('keyup' , fatorial);
 // console.log( fatorial(5))
