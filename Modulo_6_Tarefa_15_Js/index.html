@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <section id="section">
+        <h1 id="title">Consultar valores de cotação de moedas com relação ao real</h1>
+        <select id="select">
+            <option selected disabled></option>
+            <option value="USD">Dólar Americano</option>
+            <option value="EUR">Euro</option>
+            <option value="GBP">Libra Esterlina</option>
+            <option value="CAD">Dólar Canadense</option>
+        </select>
+        <div>
+            <label>De: </label>
+            <input id="date1" type="date" />
+            <label>Até: </label>
+            <input id="date2" type="date" />
+        </div>
+        <button id="button" type="button">Consultar</button>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Valor de fechamento</th>
+                    <th>Data e Hora</th>
+                    <th>Valor mínimo e máximo</th>
+                    <th>Última cotação</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </section>
+    <p id="test"></p>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
