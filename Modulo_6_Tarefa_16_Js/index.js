@@ -65,7 +65,7 @@ function search() {
         const result2 = document.querySelector('#result2');
         const showMap = document.querySelector('#map');
         showMap.addEventListener('click', function ShowMap() {
-            result2.innerHTML = `<iframe src="http://maps.google.com/maps?q=${data.lat}, ${data.lng}&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>`
+            result2.innerHTML = `<iframe src="https://maps.google.com/maps?q=${data.lat}, ${data.lng}&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>`
         })
     })
     .catch((err) => {
