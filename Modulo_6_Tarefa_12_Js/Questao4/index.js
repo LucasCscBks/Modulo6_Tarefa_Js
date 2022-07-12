@@ -277,7 +277,7 @@ let baralho = [
 }
 ]
 let baralhoSorteado = []
-const buttonObj = document.querySelector('#button');
+const buttonObj = document.querySelector('#deck');
 const resultObj = document.querySelector('#result');
 const result2Obj = document.querySelector('#result2');
 const result3Obj = document.querySelector('#result3');
