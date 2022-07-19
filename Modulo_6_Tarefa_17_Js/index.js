@@ -7,6 +7,7 @@ const today = new Date()
 const day = `${today.getDate()}/0${today.getMonth() +1}/${today.getFullYear()}`
 const tomorrow = `${today.getDate() +1}/0${today.getMonth() +1}/${today.getFullYear()}`
 const tomorrow2 = `${today.getDate() +2}/0${today.getMonth() +1}/${today.getFullYear()}`
+const tomorrow3 = `${today.getDate() +3}/0${today.getMonth() +1}/${today.getFullYear()}`
 console.log(day)
 button.addEventListener('click', time);
 select.addEventListener('change', city);
@@ -83,9 +84,9 @@ function time() {
         console.log(data)
         console.log(typeof data)
         console.log(data[select2.value])
-        console.log(data[select2.value]['18/07/2022']);
-        console.log(data[select2.value]['19/07/2022']);
-        console.log(data[select2.value]['20/07/2022']);
+        console.log(data[select2.value][day]);
+        console.log(data[select2.value][tomorrow]);
+        console.log(data[select2.value][tomorrow2]);
         console.log(data[select2.value]['21/07/2022']);
 
         // Criando tabela para mostrar os dados //
@@ -140,6 +141,45 @@ function time() {
         <td>${data[select2.value][tomorrow]['manha']['resumo']}</td>
         <td>${data[select2.value][tomorrow]['manha']['temp_min']}ºC</td>
         <td>${data[select2.value][tomorrow]['manha']['temp_max']}ºC</td>`
+        // Dados amanhã de manhã //
+        // Dados amanhã de tarde //
+        tbody.innerHTML += `<td>${tomorrow}</td>
+        <td>Tarde</td>
+        <td>${data[select2.value][tomorrow]['tarde']['dia_semana']}</td>
+        <td><img src="${data[select2.value][tomorrow]['tarde']['icone']}" /></td>
+        <td>${data[select2.value][tomorrow]['tarde']['resumo']}</td>
+        <td>${data[select2.value][tomorrow]['tarde']['temp_min']}ºC</td>
+        <td>${data[select2.value][tomorrow]['tarde']['temp_max']}ºC</td>`
+        // Dados amanhã de tarde //
+        // Dados amanhã a noite //
+        tbody.innerHTML += `<td>${tomorrow}</td>
+        <td>Noite</td>
+        <td>${data[select2.value][tomorrow]['noite']['dia_semana']}</td>
+        <td><img src="${data[select2.value][tomorrow]['noite']['icone']}" /></td>
+        <td>${data[select2.value][tomorrow]['noite']['resumo']}</td>
+        <td>${data[select2.value][tomorrow]['noite']['temp_min']}ºC</td>
+        <td>${data[select2.value][tomorrow]['noite']['temp_max']}ºC</td>`
+        // Dados amanhã a noite //
+
+        // Dados de depois de amanhã //
+        tbody.innerHTML += `<td>${tomorrow2}</td>
+        <td>Dia todo</td>
+        <td>${data[select2.value][tomorrow2]['dia_semana']}</td>
+        <td><img src="${data[select2.value][tomorrow2]['icone']}" /></td>
+        <td>${data[select2.value][tomorrow2]['resumo']}</td>
+        <td>${data[select2.value][tomorrow2]['temp_min']}ºC</td>
+        <td>${data[select2.value][tomorrow2]['temp_max']}ºC</td>`
+        // Dados de depois de amanhã //
+
+        // Dados de depois de depois de amanhã //
+        tbody.innerHTML += `<td>${tomorrow3}</td>
+        <td>Dia todo</td>
+        <td>${data[select2.value][tomorrow3]['dia_semana']}</td>
+        <td><img src="${data[select2.value][tomorrow3]['icone']}" /></td>
+        <td>${data[select2.value][tomorrow3]['resumo']}</td>
+        <td>${data[select2.value][tomorrow3]['temp_min']}ºC</td>
+        <td>${data[select2.value][tomorrow3]['temp_max']}ºC</td>`
+        // Dados de depois de depois de amanhã //
     })
     .catch((err) => {
         console.log(err)
