@@ -27,7 +27,7 @@ export async function city() {
     const citys = await promise
     select_container.innerHTML = `<select id="select2"></select>`
                 const select2 = document.querySelector('#select2');
-                select2.innerHTML = `<option></option>`
+                select2.innerHTML = `<option>Cidade</option>`
                 for (let i = 0; i < citys.length; i++) {
                     select2.innerHTML += `<option value="${citys[i].id}">${citys[i].nome}</option>`
                 }
