@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 80vh;
+}
+#cartela01,#cartela02 {
+    display: flex;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+}
+.cartela1, .cartela2 {
+    border: 2px solid;
+    font-size: 22px;
+    margin-left: 5px;
+}
+#sort_container {
+    display: flex;
+    font-size: 100px;
+    justify-content: center;
+}
+#sortedNumber {
+    color: rgba(0,0,255,1);
+    font-family: 'Mochiy Pop One', sans-serif;;
+    text-shadow: 5px 5px 5px rgba(255,255,0,1);
+}
+#test {
+    margin-top: 5vh;
+}
